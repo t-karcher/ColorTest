@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg7xt65ihc673"]
+
+[ext_resource type="Script" path="res://SpawnPoint.gd" id="1_seuxs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sl2bc"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlay0"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gvq38"]
+
+[node name="Demo" type="Node3D"]
+
+[node name="SpawnPoint" type="Node3D" parent="."]
+script = ExtResource("1_seuxs")
+forDamaged = true
+redMesh = SubResource("StandardMaterial3D_sl2bc")
+greenMesh = SubResource("StandardMaterial3D_qlay0")
+
+[node name="SpawnBlock" type="MeshInstance3D" parent="SpawnPoint"]
+mesh = SubResource("BoxMesh_gvq38")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.984439, 0.0219271, -0.174354, 0, 0.992185, 0.124779, 0.175728, -0.122837, 0.976745, -2.29644, -0.0604836, 2.25161)
+fov = 81.5625
